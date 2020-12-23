@@ -1,0 +1,177 @@
+{
+    "event": {
+        "header": {
+            "namespace": "Alexa.Discovery",
+            "name": "AddOrUpdateReport",
+            "messageId": "<uuid>",
+            "eventCorrelationToken": "xxxxxx",
+            "payloadVersion": "3"
+        },
+        "payload": {
+            "endpoints": [
+                {
+                    "friendlyName": "Mac",
+                    "description": "SH Demo Controls for Mac OS",
+                    "endpointId": "1",
+                    "manufacturerName": "Amazon",
+                    "modelName": "EVT",
+                    "cookie": {
+                        "key": "value"
+                    },
+                    "displayCategories": [
+                        "COMPUTER"
+                    ],
+                    "capabilities": [
+                       
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.ToggleController",
+                            "instance": "Mac.ScreenSaver",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "toggleState"
+                                    }
+                                ],
+                                "proactivelyReported": false,
+                                "retrievable": true
+                            },
+                            "capabilityResources": {
+                                "friendlyNames": [
+                                    {
+                                        "@type": "text",
+                                        "value": {
+                                            "text": "Screen Saver",
+                                            "locale": "en-US"
+                                        }
+                                    }
+                                ]
+                            },
+                            "semantics": {
+                                "actionMappings": [
+                                    {
+                                        "@type": "ActionsToDirective",
+                                        "actions": [
+                                            "Alexa.Actions.Open"
+                                        ],
+                                        "directive": {
+                                            "name": "TurnOn",
+                                            "payload": {}
+                                        }
+                                    }
+                                ],
+                                "stateMappings": [
+                                    {
+                                        "@type": "StatesToValue",
+                                        "states": [
+                                            "Alexa.States.Open"
+                                        ],
+                                        "value": "ON"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa.RangeController",
+                            "instance": "Mac.Brightness",
+                            "version": "3",
+                            "properties": {
+                                "supported": [
+                                    {
+                                        "name": "rangeValue"
+                                    }
+                                ],
+                                "proactivelyReported": true,
+                                "retrievable": true,
+                                "nonControllable": false
+                            },
+                            "capabilityResources": {
+                                "friendlyNames": [
+                                    {
+                                        "@type": "text",
+                                        "value": {
+                                            "text": "Brightness",
+                                            "locale": "en-US"
+                                        }
+                                    }
+                                ]
+                            },
+                            "configuration": {
+                                "supportedRange": {
+                                    "minimumValue": 1,
+                                    "maximumValue": 10,
+                                    "precision": 1
+                                },
+                                "presets": [
+                                    {
+                                        "rangeValue": 10,
+                                        "presetResources": {
+                                            "friendlyNames": [
+                                                {
+                                                    "@type": "asset",
+                                                    "value": {
+                                                        "assetId": "Alexa.Value.Maximum"
+                                                    }
+                                                },
+                                                {
+                                                    "@type": "asset",
+                                                    "value": {
+                                                        "assetId": "Alexa.Value.High"
+                                                    }
+                                                },
+                                                {
+                                                    "@type": "text",
+                                                    "value": {
+                                                        "text": "Max",
+                                                        "locale": "en-US"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "rangeValue": 1,
+                                        "presetResources": {
+                                            "friendlyNames": [
+                                                {
+                                                    "@type": "asset",
+                                                    "value": {
+                                                        "assetId": "Alexa.Value.Minimum"
+                                                    }
+                                                },
+                                                {
+                                                    "@type": "asset",
+                                                    "value": {
+                                                        "assetId": "Alexa.Value.Low"
+                                                    }
+                                                },
+                                                {
+                                                    "@type": "text",
+                                                    "value": {
+                                                        "text": "Min",
+                                                        "locale": "en-US"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "AlexaInterface",
+                            "interface": "Alexa",
+                            "version": "3"
+                        }
+                    ]
+                }
+            ],
+            "scope": {
+                "type": "BearerToken",
+                "token": "access-token-from-Amazon"
+            }
+        }
+    }
+}

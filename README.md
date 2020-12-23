@@ -68,4 +68,6 @@
 - https://developer.amazon.com/docs/device-apis/alexa-modecontroller.html
 
 
+# Modification from Original
 
+This fork of the original repo (https://github.com/romaneul/sh-over-avs-demo/) is optimized as a prototype for a Mac OS device to turn on the screen saver and to control the screen brightness. Brightness is controlled via the following: https://formulae.brew.sh/formula/brightness
